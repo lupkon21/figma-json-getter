@@ -14,7 +14,9 @@ function App() {
 
     return (
         <div className="App">
-            <input type="button" value="GET JSON" onClick={getJson} />
+            <form className="Form-JSON">
+                <input type="button" value="GET JSON" onClick={getJson} />
+            </form>
         </div>
     );
 }

@@ -16,3 +16,20 @@
 .App-link {
     color: #61dafb;
 }
+
+.Form-JSON {
+    background: linear-gradient(
+        180deg,
+        rgba(18, 18, 18, 0.021) 0%,
+        rgba(18, 18, 18, 0.2772) 100%
+    );
+    width: 50%;
+    height: 50%;
+    border: 10px solid #1abcfe;
+    box-sizing: border-box;
+    border-radius: 103px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
