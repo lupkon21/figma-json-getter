@@ -1,38 +1,59 @@
 import "./App.css";
 import React from "react";
-import Axios from "axios";
+import axios from "axios";
 import Logo from "./graphics/figma_logo.png";
 
 function App() {
-    const getJson = () =>
-        Axios.get("http://localhost:8080/json")
-            .then((response) => {
-                console.log(response.data);
+    let getJson = (e) => {
+        e.preventDefault();
+
+        let figmaUserToken = document.querySelector("#figmaUserToken").value;
+        let figmaFileID = document.querySelector("#figmaFileID").value;
+
+        let data = JSON.stringify({
+            "figmaUserToken": figmaUserToken,
+            "figmaFileID": figmaFileID,
+        });
+
+        let config = {
+            method: "post",
+            url: "http://localhost:8080/json",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: data,
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
             })
-            .catch((error) => {
+            .catch(function (error) {
                 console.log(error);
             });
+    };
 
     return (
         <div className="App">
-            <form className="Form-JSON">
+            <form onSubmit={getJson} className="Form-JSON">
                 <div className="Form-left">
                     <img className="Form-logo" src={Logo} alt="figma_logo" />
-                    {/*<input type="button" value="GET JSON" onClick={getJson} />*/}
                 </div>
 
                 <div className="Form-right">
                     <h1 className="Form-heading">FIGMA JSON GETTER</h1>
                     <input
                         type="text"
-                        name="figma_token"
+                        name="figmaUserToken"
+                        id="figmaUserToken"
                         placeholder="xxxxx-xxxxx-xxxxx"
                         className="Form-input-field"
                     />
                     <br />
                     <input
                         type="text"
-                        name="file_id"
+                        name="figmaFileID"
+                        id="figmaFileID"
                         placeholder="xxxx"
                         className="Form-input-field"
                     />
@@ -44,11 +65,10 @@ function App() {
                         className="Form-input-reset Form-input-btn"
                     />
                     <input
-                        type="button"
+                        type="submit"
                         name="submit"
                         value="SUBMIT"
                         className="Form-input-submit Form-input-btn"
-                        onClick={getJson}
                     />
                 </div>
             </form>
