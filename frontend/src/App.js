@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 import Logo from "./graphics/figma_logo.png";
 import Button from "./components/Button";
+import InputTextField from "./components/InputTextField";
 
 function App() {
     return (
@@ -14,22 +15,9 @@ function App() {
 
                 <div className="Form-right">
                     <h1 className="Form-heading">FIGMA JSON GETTER</h1>
-                    <input
-                        type="text"
-                        name="figmaUserToken"
-                        id="figmaUserToken"
-                        placeholder="xxxxx-xxxxx-xxxxx"
-                        className="Form-input-field"
-                    />
-                    <br />
-                    <input
-                        type="text"
-                        name="figmaFileID"
-                        id="figmaFileID"
-                        placeholder="xxxx"
-                        className="Form-input-field"
-                    />
-                    <br />
+                    <InputTextField type="figmaUserToken" />
+
+                    <InputTextField type="figmaFileID" />
 
                     <Button type="reset" />
                     <Button type="submit" />
