@@ -1,6 +1,5 @@
 package com.figma.backend;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +13,9 @@ import java.net.URL;
 @RequestMapping("/json")
 public class JSONController {
 
-    @GetMapping()
+    @PostMapping()
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<String> getJson(@RequestBody User user) {
-        // set response headers
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Content-type", "application/text");
-        headers.set("Access-Control-Allow-Origin","*");
         try {
             // connection data
             String figmaUserToken, figmaFileID, url;
