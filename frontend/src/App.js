@@ -16,11 +16,10 @@ function App() {
                 <div className="Form-right">
                     <h1 className="Form-heading">FIGMA JSON GETTER</h1>
                     <InputTextField type="figmaUserToken" />
-
                     <InputTextField type="figmaFileID" />
-
                     <Button type="reset" />
                     <Button type="submit" />
+                    <br />
                 </div>
             </form>
         </div>
@@ -51,9 +50,23 @@ function getJson(e) {
 
     axios(config)
         .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            let dataJSON = JSON.stringify(response.data);
+            console.log(dataJSON);
+
+            let a = document.createElement("a");
+            let file = new Blob([dataJSON], {
+                type: "application/json",
+            });
+            a.href = URL.createObjectURL(file);
+            a.download = "my-figma.json";
+            a.click();
         })
+
         .catch(function (error) {
-            console.log(error);
+            if (error.response) {
+                if (error.response.status == 404)
+                    alert("File not found in Figma API 🤔");
+                else alert("Something went wrong 😕");
+            }
         });
 }
