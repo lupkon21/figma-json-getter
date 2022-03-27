@@ -10,6 +10,7 @@ const InputTextField = ({ type }) => {
                 type == "figmaUserToken" ? "xxxxx-xxxxx-xxxxx" : "xxxx"
             }
             className="Form-input-field"
+            required
         />
     );
 };
