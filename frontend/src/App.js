@@ -15,8 +15,14 @@ function App() {
 
                 <div className="Form-right">
                     <h1 className="Form-heading">FIGMA JSON GETTER</h1>
-                    <InputTextField type="figmaUserToken" />
-                    <InputTextField type="figmaFileID" />
+                    <InputTextField
+                        type="figmaUserToken"
+                        label="Your Figma Token:"
+                    />
+                    <InputTextField
+                        type="figmaFileID"
+                        label="Your Figma File ID:"
+                    />
                     <Button type="reset" />
                     <Button type="submit" />
                     <br />
@@ -51,8 +57,6 @@ function getJson(e) {
     axios(config)
         .then(function (response) {
             let dataJSON = JSON.stringify(response.data);
-            console.log(dataJSON);
-
             let a = document.createElement("a");
             let file = new Blob([dataJSON], {
                 type: "application/json",
