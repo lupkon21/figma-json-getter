@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 .App {
-    font-family: "Roboto Mono", sans-serif;
+    font-family: "Roboto";
+    font-weight: bolder;
 }
 
 .Form-JSON {
