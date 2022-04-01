@@ -4,13 +4,14 @@ import Axios from "axios";
 import Logo from "./graphics/figma_logo.png";
 import Button from "./components/Button";
 import InputTextField from "./components/InputTextField";
+import { createFile, createConfig } from "./components/Functions";
 import ErrorIcon from "./graphics/error.svg";
 
 function App() {
     const [errorMessage, setErrorMessage] = React.useState("");
     return (
         <div className="App">
-            <form onSubmit={getJson} className="Form-JSON">
+            <form onSubmit={getJSON} className="Form-JSON">
                 <div className="Form-left">
                     <img className="Form-logo" src={Logo} alt="figma_logo" />
                 </div>
@@ -32,36 +33,22 @@ function App() {
             </form>
         </div>
     );
-    function getJson(e) {
+
+    function getJSON(e) {
         e.preventDefault();
+        let figmaUserToken = document.querySelector("#figmaUserToken").value.trim();
+        let figmaFileID = document.querySelector("#figmaFileID").value.trim();
 
-        let figmaUserToken = document.querySelector("#figmaUserToken").value;
-        let figmaFileID = document.querySelector("#figmaFileID").value;
+        if (!(figmaUserToken && figmaFileID)) {
+            setErrorMessage("Invalid Token or File ID");
+            return;
+        }
 
-        let data = JSON.stringify({
-            "figmaUserToken": figmaUserToken,
-            "figmaFileID": figmaFileID,
-        });
-
-        let config = {
-            method: "post",
-            url: "http://localhost:8080/json",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            data: data,
-        };
-
-        Axios(config)
+        setErrorMessage(null);
+        Axios(createConfig(figmaUserToken, figmaFileID))
             .then(function (response) {
-                let dataJSON = JSON.stringify(response.data);
-                let a = document.createElement("a");
-                let file = new Blob([dataJSON], {
-                    type: "application/json",
-                });
-                a.href = URL.createObjectURL(file);
-                a.download = "my-figma.json";
-                a.click();
+                setErrorMessage(null);
+                createFile(JSON.stringify(response.data));
             })
 
             .catch((error) => {
