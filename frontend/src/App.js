@@ -1,11 +1,12 @@
 import "./App.css";
 import React from "react";
 import Axios from "axios";
+
 import Logo from "./graphics/figma_logo.png";
 import Button from "./components/Button";
 import InputTextField from "./components/InputTextField";
 import { createFile, createConfig } from "./components/Functions";
-import ErrorIcon from "./graphics/error.svg";
+import RequestStatus from "./components/RequestStatus";
 
 function App() {
     const [errorMessage, setErrorMessage] = React.useState("");
@@ -22,13 +23,7 @@ function App() {
                     <InputTextField type="figmaFileID" label="Your Figma File ID:" />
                     <Button type="reset" />
                     <Button type="submit" />
-                    {errorMessage && (
-                        <div className="Form-request-status">
-                            <img src={ErrorIcon} alt="error"></img>
-                            <span>{errorMessage}</span>
-                        </div>
-                    )}
-                    <br />
+                    {errorMessage && <RequestStatus errorMessage={errorMessage} />}
                 </div>
             </form>
         </div>
@@ -46,7 +41,7 @@ function App() {
 
         setErrorMessage(null);
         Axios(createConfig(figmaUserToken, figmaFileID))
-            .then(function (response) {
+            .then((response) => {
                 setErrorMessage(null);
                 createFile(JSON.stringify(response.data));
             })
