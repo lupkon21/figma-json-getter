@@ -59,6 +59,7 @@
     border: none;
     height: 9%;
     width: 25%;
+    outline-color: #f5f5f5;
 }
 
 .Form-input-btn:hover {
@@ -66,7 +67,7 @@
 }
 
 .Form-input-btn:active {
-    border: 2px solid #f5f5f5;
+    outline: 2px solid #f5f5f5;
 }
 
 .Form-input-reset {
