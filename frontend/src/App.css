@@ -117,3 +117,86 @@
     background-color: #263749;
     color: #f5f5f5;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .Form-JSON {
+        width: 700px;
+        height: 470px;
+    }
+
+    .Form-heading {
+        margin: 15% 0 8% 0;
+    }
+
+    .Form-input-btn {
+        height: 9%;
+        width: 30%;
+    }
+
+    .Form-input-reset {
+        background-color: #a259ff;
+        margin: 0 40% 0 0;
+    }
+    .Form-logo {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .Form-JSON {
+        width: 320px;
+        height: 600px;
+        border-radius: 50px;
+    }
+
+    .Form-heading {
+        font-size: 1.5em;
+        margin: 0 0 8% 0;
+    }
+
+    .Form-right {
+        margin: 0% 10% 0 0;
+    }
+
+    .Form-input-btn {
+        height: 10%;
+        width: 35%;
+    }
+
+    .Form-left {
+        grid-column: 1 / span 2;
+    }
+
+    .Form-right {
+        grid-column: 1 / span 2;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .Form-input-reset {
+        margin: 0 30% 0 0;
+    }
+
+    .Form-logo {
+        width: 15%;
+    }
+
+    .Form-input-field-label {
+        position: relative;
+        left: 25%;
+        transform: translate(-25%);
+    }
+
+    .Form-input-field {
+        height: 2em;
+    }
+
+    .Form-input-btn:active {
+        border: none;
+    }
+
+    .Form-request-status {
+        margin: 20px auto auto auto;
+    }
+}
