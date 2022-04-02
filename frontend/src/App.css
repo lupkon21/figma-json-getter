@@ -108,3 +108,8 @@
         opacity: 1;
     }
 }
+
+::selection {
+    background-color: #263749;
+    color: #1abcfe;
+}
