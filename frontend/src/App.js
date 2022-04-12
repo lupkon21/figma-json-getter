@@ -48,7 +48,7 @@ function App() {
 
             .catch((error) => {
                 if (error.response) {
-                    if (error.response.status === 404) setErrorMessage("404 - File not found in Figma API");
+                    if (error.response.status === 404) setErrorMessage("404 - File not found");
                     else setErrorMessage("Something went wrong");
                 } else {
                     setErrorMessage("Newtork error");
