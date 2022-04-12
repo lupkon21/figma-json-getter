@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    frontend:
+        build: ./frontend
+        container_name: figma_frontend_c
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        stdin_open: true
+        tty: true
+    backend:
+        build: ./backend
+        container_name: figma_backend_c
+        ports:
+            - "8080:8080"
