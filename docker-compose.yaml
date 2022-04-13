@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    frontend:
+        image: lupkon21/figma_json_getter:frontend
+        container_name: figma_frontend_c
+        ports:
+            - "3000:3000"
+        stdin_open: true
+        tty: true
+    backend:
+        image: lupkon21/figma_json_getter:backend
+        container_name: figma_backend_c
+        ports:
+            - "8080:8080"
