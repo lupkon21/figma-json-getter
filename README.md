@@ -28,4 +28,4 @@ For launching the app on your computer or laptop you must have installed this so
 4. Visit localhost on port 3000 in your browser  
 `localhost:3000`
 
-> Thanks for using!
+> This project is not affiliated with Figma.
