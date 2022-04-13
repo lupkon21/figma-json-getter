@@ -16,6 +16,20 @@ For launching the app on your computer or laptop you must have installed this so
 
 ## Launching the app
 
+### Option 1️⃣ - pull existing Docker images
+1. Clone the **docker-hub** branch  
+`git clone -b docker-hub https://github.com/lupkon21/figma_json_getter.git`
+
+2. Change your current working directory  
+`cd figma_json_getter`
+
+3. Run the app using Docker Compose  
+`docker-compose up`
+
+4. Visit localhost on port 3000 in your browser  
+`localhost:3000`
+
+### Option 2️⃣ - build Docker images locally
 1. Clone this repository  
 `git clone https://github.com/lupkon21/figma_json_getter.git`
 
@@ -28,4 +42,5 @@ For launching the app on your computer or laptop you must have installed this so
 4. Visit localhost on port 3000 in your browser  
 `localhost:3000`
 
-> This project is not affiliated with Figma.
+> This project is not affiliated with Figma.  
+> Thanks for reading!
