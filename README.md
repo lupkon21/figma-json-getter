@@ -17,7 +17,7 @@ For launching the app on your computer or laptop you must have installed this so
 ## Launching the app
 
 1. Clone this repository  
-`git clone https://lupkon21/figma_json_getter.git`
+`git clone https://github.com/lupkon21/figma_json_getter.git`
 
 2. Change your current working directory  
 `cd figma_json_getter`
