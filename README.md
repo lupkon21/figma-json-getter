@@ -3,14 +3,14 @@ Simple web application for getting JSON files from existing Figma designs.
 
 ## About
 
-This project has 2 main services, React based frontend and Spring Boot based backend service which are desined to launch in the same time with Docker. 
+This project has 2 main services, React based frontend and Spring Boot based backend which are desined to run in the same time using Docker. 
 The app was created using:
 - `React v17.0.2`
 - `Spring Boot v2.6.4 (Java 8)`
 - `Docker Compose v3.8`
 
 ## Dependencies
-For launching the app on your computer or laptop you must have installed this software:
+To launch the app on your computer or laptop you need to have installed this software:
 1. [Git](https://git-scm.com/downloads)
 2. [Docker](https://www.docker.com/products/docker-desktop/)
 
