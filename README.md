@@ -18,10 +18,10 @@ To launch the app on your computer or laptop you need to have installed this sof
 
 ### Option 1️⃣ - pull existing Docker images
 1. Clone the **docker-hub** branch  
-`git clone -b docker-hub https://github.com/lupkon21/figma_json_getter.git`
+`git clone -b docker-hub https://github.com/lupkon21/figma-json-getter.git`
 
 2. Change your current working directory  
-`cd figma_json_getter`
+`cd figma-json-getter`
 
 3. Run the app using Docker Compose  
 `docker-compose up`
@@ -31,10 +31,10 @@ To launch the app on your computer or laptop you need to have installed this sof
 
 ### Option 2️⃣ - build Docker images locally
 1. Clone this repository  
-`git clone https://github.com/lupkon21/figma_json_getter.git`
+`git clone https://github.com/lupkon21/figma-json-getter.git`
 
 2. Change your current working directory  
-`cd figma_json_getter`
+`cd figma-json-getter`
 
 3. Run the app using Docker Compose  
 `docker-compose up`
