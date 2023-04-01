@@ -1,5 +1,3 @@
-const { REST_API_URL } = process.env;
-
 function createFile(dataJSON) {
     let a = document.createElement('a');
     let file = new Blob([dataJSON], {
@@ -18,7 +16,7 @@ function createConfig(figmaUserToken, figmaFileID) {
 
     let config = {
         method: 'post',
-        url: REST_API_URL + '/json',
+        url: 'https://figma-json-getter-backend.onrender.com' + '/json',
         headers: {
             'Content-Type': 'application/json',
         },
