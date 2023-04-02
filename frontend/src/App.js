@@ -1,15 +1,15 @@
-import "./App.css";
-import React from "react";
-import Axios from "axios";
+import './App.css';
+import React from 'react';
+import Axios from 'axios';
 
-import Logo from "./graphics/figma_logo.png";
-import Button from "./components/Button";
-import InputTextField from "./components/InputTextField";
-import { createFile, createConfig } from "./components/Functions";
-import RequestStatus from "./components/RequestStatus";
+import Logo from './graphics/figma_logo.png';
+import Button from './components/Button';
+import InputTextField from './components/InputTextField';
+import { createFile, createConfig } from './Functions';
+import RequestStatus from './components/RequestStatus';
 
 function App() {
-    const [errorMessage, setErrorMessage] = React.useState("");
+    const [errorMessage, setErrorMessage] = React.useState('');
     return (
         <div className="App">
             <form onSubmit={getJSON} className="Form-JSON">
@@ -31,11 +31,11 @@ function App() {
 
     function getJSON(e) {
         e.preventDefault();
-        let figmaUserToken = document.querySelector("#figmaUserToken").value.trim();
-        let figmaFileID = document.querySelector("#figmaFileID").value.trim();
+        let figmaUserToken = document.querySelector('#figmaUserToken').value.trim();
+        let figmaFileID = document.querySelector('#figmaFileID').value.trim();
 
         if (!(figmaUserToken && figmaFileID)) {
-            setErrorMessage("Invalid Token or File ID");
+            setErrorMessage('Invalid Token or File ID');
             return;
         }
 
@@ -48,10 +48,10 @@ function App() {
 
             .catch((error) => {
                 if (error.response) {
-                    if (error.response.status === 404) setErrorMessage("404 - File not found");
-                    else setErrorMessage("Something went wrong");
+                    if (error.response.status === 404) setErrorMessage('404 - File not found');
+                    else setErrorMessage('Something went wrong');
                 } else {
-                    setErrorMessage("Newtork error");
+                    setErrorMessage('Newtork error');
                 }
             });
     }

@@ -14,9 +14,11 @@ function createConfig(figmaUserToken, figmaFileID) {
         'figmaFileID': figmaFileID,
     });
 
+    console.log(process.env.REACT_APP_URL);
+
     let config = {
         method: 'post',
-        url: 'https://figma-json-getter-backend.onrender.com' + '/json',
+        url: process.env.REACT_APP_REST_API_URL + '/json',
         headers: {
             'Content-Type': 'application/json',
         },
