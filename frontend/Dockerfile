@@ -2,6 +2,8 @@
 FROM node:lts-alpine as build
 WORKDIR /app
 COPY package.json .
+ARG REACT_APP_REST_API_URL
+ENV REACT_APP_REST_API_URL=$REACT_APP_REST_API_URL
 RUN npm install --silent
 COPY . .
 RUN npm run build

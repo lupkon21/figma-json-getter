@@ -1,14 +1,17 @@
-version: "3.8"
+version: '3.8'
 services:
     frontend:
-        build: ./frontend
+        build:
+            context: ./frontend
+            args:
+                REACT_APP_REST_API_URL: http://localhost:8080
         container_name: figma_frontend_c
         ports:
-            - "3000:3000"
+            - '3000:3000'
         stdin_open: true
         tty: true
     backend:
         build: ./backend
         container_name: figma_backend_c
         ports:
-            - "8080:8080"
+            - '8080:8080'
