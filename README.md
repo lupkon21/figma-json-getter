@@ -1,5 +1,5 @@
 # Figma JSON getter 
-Simple web application for getting JSON files from existing Figma designs.  
+Figma JSON Getter is a simple web application that allows users to easily retrieve Figma designs in JSON format. The frontend part is developed in React and the backend is written in Spring Boot.
 
 ## About
 
